@@ -6,8 +6,9 @@ from tensorflow.keras.models import load_model
 import cv2
 from django.contrib import messages
 
-
-face_mask_model = load_model(r'C://Users//Mehedi//Desktop//Machine Learning Project//TumorDetection//static//model//brain-tumor-detection-model.h5')
+filepath = os.path.join('static', 'model/brain-tumor-detection-model.h5')
+#face_mask_model = load_model(r'C://Users//Mehedi//Desktop//Machine Learning Project//TumorDetection//static//model//brain-tumor-detection-model.h5')
+face_mask_model = load_model(filepath)
 
 # Create your views here.
 def index(request):
