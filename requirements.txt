@@ -1,0 +1,7 @@
+Django
+numpy
+pandas
+opencv-python
+tensorflow
+Pillow
+whitenoise
