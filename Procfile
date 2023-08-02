@@ -1,0 +1,1 @@
+web: gunicorn TumorDetection.wsgi -log-file -
