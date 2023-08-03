@@ -2,7 +2,8 @@ Django
 numpy
 pandas
 opencv-python
-tensorflow
+tensorflow==2.0.0
 Pillow
 whitenoise
 gunicorn
+protobuf
