@@ -6,4 +6,4 @@ tensorflow==2.0.0
 Pillow
 whitenoise
 gunicorn
-protobuf
+protobuf==4.23.0
