@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+
+
+  <main>
+    <h1 class="text-body-emphasis">Pneumonia Detection through Xray</h1>
+    <p class="fs-5 col-md-8">Pneumonia Detection using Convolutional Neural Network.</p>
+
+
+    <h1 class="text-body-emphasis">Upload Your Pneumonia Image ....</h1>
+
+    
+
+    <form method="post" enctype="multipart/form-data" class="form-control">
+      {% csrf_token %}
+      <input type="file" name="imageFile"  id="imageInput" class="form-control form-control-lg"/>
+      <br><br>
+      <img id="imagePreview" src="" alt="Preview Image" style="max-width: 300px; max-height: 300px; display: none;">
+      <br><br>
+      <input type="submit" name="submit" class="btn btn-info" value="Upload" />
+    </form>
+
+
+    
+
+   <br><br>
+   <h1 class="text-body-emphasis">Result</h1>
+
+   
+        <div class="my-5">
+
+          {% if messages %}
+              <div class="row">
+              <div class="col-sm-6 col-sm-offset-3">
+                  {% for message in messages %}
+                  <div class="alert alert-{{ message.tags }}" role="alert">
+                      <h1 class="text-body-emphasis">{{ message }}</h1>
+                  </div>
+                  {% endfor %}
+                </div>
+            
+              </div>
+            {% endif %}
+
+        </div>
+
+
+        <div>
+            <div class="row">
+                <div class="col">
+                    <h5>Normal</h5>
+                    <img src="{% static 'img/pneumonia/good.jpeg' %}" alt="Normal"  class="img-thumbnail">
+                    <div class="text-center">
+                        <a href="{% static 'img/pneumonia/good.jpeg' %}" type="button" class="btn btn-dark my-3 text-center">Download</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h5>Pneumonia</h5>
+                    <img src="{% static 'img/pneumonia/bad.jpeg' %}" alt="Pneumonia"  class="img-thumbnail">
+                    <div class="text-center">
+                        <a href="{% static 'img/pneumonia/bad.jpeg' %}" type="button" class="btn btn-dark my-3 text-center">Download</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+
+
+      
+    
+  </main>
+
+
+
+
+
+{% endblock %}
