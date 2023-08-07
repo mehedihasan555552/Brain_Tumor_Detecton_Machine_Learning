@@ -2,7 +2,7 @@ Django
 numpy
 pandas
 opencv-python
-tensorflow
+tensorflow-cpu --no-cache-dir
 Pillow
 whitenoise
 gunicorn
